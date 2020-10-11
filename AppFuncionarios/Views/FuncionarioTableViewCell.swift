@@ -10,32 +10,24 @@ import UIKit
 
 class FuncionarioTableViewCell: UITableViewCell {
 
-    // MARK: > IBOutlets
+    // MARK: # IBOutlets
     
     @IBOutlet weak var tituloLabel: UILabel!
     @IBOutlet weak var subtituloLabel: UILabel!
     @IBOutlet weak var fotoImageView: UIImageView!
     
-    // MARK: > Methods
+    // MARK: # Class Methods
     
     func setup(funcionario: Funcionario?) {
         guard let $funcionario = funcionario else { return }
         
-        self.tituloLabel.text = self.getNome($funcionario)
+        self.tituloLabel.text = getNome($funcionario)
         self.subtituloLabel.text = $funcionario.email
-        self.fotoImageView.image = self.getImage(funcionario: $funcionario)
+        self.fotoImageView.image = getImage(funcionario: $funcionario)
+        self.fotoImageView.layer.cornerRadius = self.fotoImageView.frame.size.width / 2
     }
     
-    func getImage(funcionario: Funcionario) -> UIImage? {
-        let image = UIImage(named: funcionario.avatar ?? "") ?? nil
-        return image
-    }
-    
-    // Retorna o nome completo
-    private func getNome(_ funcionario: Funcionario) -> String {
-        let nome = (funcionario.nome ?? "") + " " + (funcionario.sobrenome ?? "")
-        return nome.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
+    // MARK: # LifeCycles
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,8 +36,6 @@ class FuncionarioTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

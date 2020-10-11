@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F63DAB62532FD090014B186 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F63DAB52532FD090014B186 /* CadastroViewController.swift */; };
+		2F63DAB8253319C90014B186 /* DetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F63DAB7253319C90014B186 /* DetalheViewController.swift */; };
+		2F63DABB253321280014B186 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F63DABA253321280014B186 /* Helpers.swift */; };
 		2FA9F0492531D65C00E685C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9F0482531D65C00E685C5 /* AppDelegate.swift */; };
 		2FA9F04B2531D65C00E685C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9F04A2531D65C00E685C5 /* SceneDelegate.swift */; };
 		2FA9F04D2531D65C00E685C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA9F04C2531D65C00E685C5 /* MainViewController.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F63DAB52532FD090014B186 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		2F63DAB7253319C90014B186 /* DetalheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheViewController.swift; sourceTree = "<group>"; };
+		2F63DABA253321280014B186 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		2FA9F0452531D65C00E685C5 /* AppFuncionarios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFuncionarios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA9F0482531D65C00E685C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FA9F04A2531D65C00E685C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 				2FA9F0512531D65E00E685C5 /* Assets.xcassets */,
 				2FA9F0532531D65E00E685C5 /* LaunchScreen.storyboard */,
 				2FA9F0562531D65F00E685C5 /* Info.plist */,
+				2F63DABA253321280014B186 /* Helpers.swift */,
 			);
 			path = AppFuncionarios;
 			sourceTree = "<group>";
@@ -80,6 +87,8 @@
 				2FA9F04C2531D65C00E685C5 /* MainViewController.swift */,
 				2FA9F0602531E1E600E685C5 /* FuncionarioTableViewCell.swift */,
 				2FA9F0612531E1E600E685C5 /* FuncionarioTableViewCell.xib */,
+				2F63DAB52532FD090014B186 /* CadastroViewController.swift */,
+				2F63DAB7253319C90014B186 /* DetalheViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,9 +174,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FA9F04D2531D65C00E685C5 /* MainViewController.swift in Sources */,
+				2F63DAB62532FD090014B186 /* CadastroViewController.swift in Sources */,
 				2FA9F05F2531D71500E685C5 /* Funcionario.swift in Sources */,
+				2F63DABB253321280014B186 /* Helpers.swift in Sources */,
 				2FA9F0622531E1E600E685C5 /* FuncionarioTableViewCell.swift in Sources */,
 				2FA9F0492531D65C00E685C5 /* AppDelegate.swift in Sources */,
+				2F63DAB8253319C90014B186 /* DetalheViewController.swift in Sources */,
 				2FA9F04B2531D65C00E685C5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

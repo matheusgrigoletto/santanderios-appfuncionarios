@@ -8,8 +8,6 @@
 
 import Foundation
 
-let AVATAR_BASE_URL: String = "https://randomuser.me/api/portraits/"
-
 struct Funcionario {
     let nome: String?
     let sobrenome: String?

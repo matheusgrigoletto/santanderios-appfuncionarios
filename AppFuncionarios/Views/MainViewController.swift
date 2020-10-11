@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum AppSegue: String {
+    case Cadastro = "CadastroViewController"
+    case Detalhe = "DetalheViewController"
+}
+
 class MainViewController: UIViewController {
     
     // MARK: # IBOutlets
@@ -30,6 +35,8 @@ class MainViewController: UIViewController {
         Funcionario(nome: "Isobel", sobrenome: "Lebbon", email: "ilebbon9@ucsd.edu", matricula: "7681585079", avatar: "avatar4.png"),
     ]
     
+    var selectedFuncionario: Funcionario?
+    
     // MARK: # Class Methods
 
     private func configTableView() {
@@ -47,7 +54,25 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.configTableView()
     }
-
+    
+    // MARK: # Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == AppSegue.Cadastro.rawValue {
+            let viewController: CadastroViewController? = segue.destination as? CadastroViewController
+            viewController?.delegate = self
+        } else if segue.identifier == AppSegue.Detalhe.rawValue {
+            let viewController: DetalheViewController? = segue.destination as? DetalheViewController
+            viewController?.funcionario = self.selectedFuncionario
+        }
+    }
+    
+    // MARK: # IBActions
+    
+    @IBAction func tappedCadastrarButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: AppSegue.Cadastro.rawValue, sender: nil)
+    }
+    
 }
 
 // MARK: # Table View Data Source
@@ -73,6 +98,27 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        self.selectedFuncionario = self.funcionarios[indexPath.row]
+
+        self.performSegue(withIdentifier: AppSegue.Detalhe.rawValue, sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        self.funcionarios.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .left)
+    }
+}
+
+// MARK: # CadastroProtocol
+
+extension MainViewController: CadastroProtocol {
+    func onSuccesRegister(funcionario: Funcionario) {
+        self.funcionarios.insert(funcionario, at: 0)
+        
+        self.funcionariosTableView.reloadData()
     }
 }
